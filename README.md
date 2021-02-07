@@ -14,6 +14,9 @@ In this game, users will be able to :
 Bonus MVP:
 * [ ] Start and Pause the background music
 
+
+***
+
 ## Wireframes
 This app will be a single screen app. The navbar will include the the Github link, LinkedIn Link, and the README. The game control will include star, reset and select puzzle. On the main, the board will contain two puzzles, player1 and player2. Whoever is the winner, his or her name will pop on the hearder.
 
