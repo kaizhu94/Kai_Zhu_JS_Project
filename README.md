@@ -6,5 +6,5 @@ Have you ever fight for a meme with your friends because you want to show that y
 
 ## Functionality & MVP
 In this game, users will be able to :
-* Start and reset the game board
-* 
+* [ ] Start and reset the game board
+* [ ] 
