@@ -18,5 +18,5 @@ Bonus MVP:
 This app will be a single screen app. The navbar will include the the Github link, LinkedIn Link, and the README. The game control will include star, reset and select puzzle. On the main, the board will contain two puzzles, player1 and player2. Whoever is the winner, his or her name will pop on the hearder.
 
 
-![image](https://user-images.githubusercontent.com/71399999/107162221-b2623900-696f-11eb-910b-33f251509d3d.png)
+![image](https://user-images.githubusercontent.com/71399999/107162237-cc9c1700-696f-11eb-8ed2-b1547b1cafda.png)
 
