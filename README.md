@@ -7,12 +7,13 @@ Have you ever fight for a meme with your friends because you want to show that y
 ## Functionality & MVP
 In this game, users will be able to :
 * [ ] Start and reset the game board
-* [ ] Move a slice of puzzle by clicking on it or using keyboard
-* [ ] Select different puzzles
+* [ ] Move a slice of puzzle by clicking on the movable slice
+* [ ] Move a slice of puzzle by using keyboard 'WASD' and Arrows
 * [ ] End the game when he or she solved the puzzle before the other player
 
 Bonus MVP:
 * [ ] Start and Pause the background music
+* [ ] Select different puzzles
 
 
 ***
@@ -22,4 +23,24 @@ This app will be a single screen app. The navbar will include the the Github lin
 
 
 ![image](https://user-images.githubusercontent.com/71399999/107162237-cc9c1700-696f-11eb-8ed2-b1547b1cafda.png)
+
+
+***
+
+## Architecture and Technologies
+* `Javascript` for game logic
+* `Canvas` for drawing images
+* `HTML5` for effects rendering
+* `Webpack` for the JS module bundler
+
+In addition to the entry file, the following scripts are employed to support the game implementation:
+* game.js: this script will handle the logic for start the game and reset the game.
+* player.js: this script will handle the logic for the puzzle of the player.
+
+
+***
+
+## Implementation Timeline
++ Day1
+
 
