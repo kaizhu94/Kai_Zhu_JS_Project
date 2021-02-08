@@ -1,5 +1,5 @@
 
-## Backgroud
+## Background
 Have you ever fight for a meme with your friends because you want to show that you loved this meme so much. Here is where Meme Puzzle Competition comes in. In this game, you can compete with a friend for the speed in solving the puzzle. The more you love the meme, the faster you can do it!
 
 ***
@@ -29,7 +29,7 @@ This app will be a single screen app. The navbar will include the the Github lin
 
 ## Architecture and Technologies
 * `Javascript` for game logic
-* `Canvas` for drawing images
+* `Canvas` for drawing images( Need to use Canvas to split the image into 9 equally pieces, and I don't know how yet)
 * `HTML5` for effects rendering
 * `Webpack` for the JS module bundler
 
@@ -49,6 +49,7 @@ In addition to the entry file, the following scripts are employed to support the
 * Build up script for the game
 
 ### Day 2
+* Figure out how to split image using canvas
 * Build up script for the puzzle.
 * Connect puzzle with the game.
 
