@@ -41,6 +41,23 @@ In addition to the entry file, the following scripts are employed to support the
 ***
 
 ## Implementation Timeline
-+ Day1
+### Day 1
+* Set up webpack and node modules
+* Set up Canvas for the game
+* Seed images for the puzzle.
+* Build up script for the game
+
+### Day 2
+* Build up script for the puzzle.
+* Connect puzzle with the game.
+
+### Day 3
+* Completed the backend Game logic for how the slice move.
+* Add second player to the game
+* Add selector for images
+
+### Day 4
+* Wrapped up with styling front end 
+* Testing any bugs
 
 
