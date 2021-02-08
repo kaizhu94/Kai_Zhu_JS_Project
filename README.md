@@ -8,7 +8,7 @@ Have you ever fight for a meme with your friends because you want to show that y
 In this game, users will be able to :
 * [ ] Start and reset the game board
 * [ ] Move a slice of puzzle by clicking on the movable slice
-* [ ] Move a slice of puzzle by using keyboard 'WASD' and Arrows
+* [ ] Move a slice of puzzle by using keyboard 'WASD'(player1) and Arrows(player2)
 * [ ] End the game when he or she solved the puzzle before the other player
 
 Bonus MVP:
