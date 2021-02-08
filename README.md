@@ -34,7 +34,7 @@ This app will be a single screen app. The navbar will include the the Github lin
 * `Webpack` for the JS module bundler
 
 In addition to the entry file, the following scripts are employed to support the game implementation:
-* game.js: this script will handle the logic for start the game and reset the game.
+* game.js: this script will handle the logic for start the game and reset the game. 
 * player.js: this script will handle the logic for the player.
 * puzzle.js: this script will handle the logic for the puzzle.
 
