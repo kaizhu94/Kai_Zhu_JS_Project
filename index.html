@@ -9,7 +9,38 @@
   </head>
 
   <body>
-
+    <div class="game">
+      <div class="game-title">
+        <div class="hearder">
+          <img src="./dist/images/baozoulol.jpg" alt="Logo" width="50" height="50">
+          <h1>Meme Puzzle Competition</h1>
+          <p>By: Kaihua Zhu</p>
+        </div>
+        <div class="controllers">
+          <button id='start'>Start</button>
+          <button id='reset'>Reset</button>
+          <select  placeholder='Pick your favorite meme' name="images" id="images-selector">
+            <option value="" disabled hidden selected>Select your meme</option>
+            <option value="duewhen_">duewhen</option>
+            <option value="nofriend_">nofrind</option>
+            <option value="whyAA_">whyAA</option>
+          </select>
+          <a href="https://github.com/kaizhu94" target="_blank">Github</a>
+          <a href="https://www.linkedin.com/in/kaihua-zhu-177a041b1/" target="_blank">LinkedIn</a>
+          <a href="https://github.com/kaizhu94/Kai_Zhu_JS_Project/blob/master/README.md" target="_blank">README</a>
+        </div>
+        <div id='game-board'>
+          <div id='board-container'>
+            <canvas id = 'player1Board'>
+  
+            </canvas>
+            <canvas id = 'player2Board'>
+  
+            </canvas>
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="./dist/main.js"></script>
   </body>
 </html>
