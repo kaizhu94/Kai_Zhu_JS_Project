@@ -7,19 +7,20 @@ export default class MemeGame{
         this.cavas1 = player1Board;
         this.cavas2= player2Board;
         this.playing = false;
-        this.gameOver = false
-    }
-    updateGameOver(){
-        this.gameOver = !this.gameOver
+        this.setGameOver = this.setGameOver.bind(this);
+        this.start = this.start.bind(this);
+        this.reset = this.reset.bind(this);
     }
     
+    setGameOver(){
+        this.player1Board.gameFinished();
+        this.player2Board.gameFinished();
+    }
+
     start(meme){
         this.playing = true;
-        this.start = true;
-        console.log("In game: "+ this.gameOver)
-        this.player1Board = new Puzzle(this.cavas1, this.player1, this.start, this.updateGameOver);
-        this.player2Board = new Puzzle(this.cavas2, this.player2, this.start,  this.updateGameOver);
-        console.log("In game: "+ this.gameOver)
+        this.player1Board = new Puzzle(this.cavas1, this.player1, this.playing, this.setGameOver);
+        this.player2Board = new Puzzle(this.cavas2, this.player2, this.playing, this.setGameOver);
         this.player1Board.drawAllImage(meme);
         this.player2Board.drawAllImage(meme);
     }

@@ -1,7 +1,7 @@
 
 export default class Puzzle{
 
-    constructor(convas, player, start, updateGameOver){
+    constructor(convas, player, start, setGameOver){
         this.player = player;
         this.puzzle = convas;
         this.context = convas.getContext("2d");
@@ -15,13 +15,28 @@ export default class Puzzle{
         this.correctIndex=[0,1,2,3,4,5,6,7,8]
 
         this.gameOver = false;
-        this.updateGameOver = updateGameOver;
+        this.setGameOver = setGameOver;
         this.gameStart = start || false;
 
-        document.addEventListener('mousedown', (e)=>{
-            // debugger
-            // console.log("I clicked on it"+ e.currentTarget.value)
-            let position =-1;
+        this.puzzle.addEventListener('mousedown', (e)=>{
+            if (this.gameOver) {
+                return;
+            }
+            let x = parseInt(e.offsetX / (this.padding + this.imageWidth));
+            let y = parseInt(e.offsetY / (this.padding + this.imageWidth));
+
+            let position = y * this.column + x;
+            let target = this.moveImageIfCanAtPosition(this.imageIndex, this.puzzle, position);
+            
+            if (target >= 0){
+                this.refreshImagePositions(this.context, this.imageIndex, position, target);
+            }
+            if (this.checkIfFinished(this.imageIndex)) {
+                this.drawPiece(this.meme ,this.imageIndex[this.lastIndex()], this.lastIndex());
+                this.gameOver = true;
+                this.setGameOver();
+                console.log('gameover in keyup inner loop: '+this.gameOver)
+            }
         });
 
         document.addEventListener('keydown', (e)=>{
@@ -76,13 +91,15 @@ export default class Puzzle{
             if (this.checkIfFinished(this.imageIndex)) {
                 this.drawPiece(this.meme ,this.imageIndex[this.lastIndex()], this.lastIndex());
                 this.gameOver = true;
-                this.updateGameOver();
+                this.setGameOver();
                 console.log('gameover in keyup inner loop: '+this.gameOver)
             }
         })
         
     }
-
+    gameFinished(){
+        this.gameOver = true;
+    }
     // return the last index
     lastIndex() {
         return this.column * this.column - 1;
@@ -202,12 +219,13 @@ export default class Puzzle{
         } else if (this.isPositionEmpty(imageIndexForPosition, left)) {
             targetPositioin = left;
         } else if (this.isPositionEmpty(imageIndexForPosition, bottom)) {
+            console.log("check for bottom: "+ bottom)
             targetPositioin = bottom;
         } else if (this.isPositionEmpty(imageIndexForPosition, right)) {
             targetPositioin = right;
         }
     
-        
+        console.log('targetPositioin in moveIf can:'+targetPositioin )
         if (targetPositioin >= 0) {
             imageIndexForPosition[targetPositioin] = imageIndexForPosition[position];
             imageIndexForPosition[position] = this.lastIndex();
