@@ -1,68 +1,75 @@
-// MIXINS && VARIABLES
-
-@mixin basic-box-shadow($color) {
-  box-shadow: 3px 3px 5px 5px $color, 1px 0px 1px $color;
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&family=Noto+Sans+JP&family=Stalinist+One&display=swap');
+body{
+  width: 99%;
+  height: 100%;
 }
 
-$main-color: blue;
-$accent-color: darken($main-color, 20%);
-$background-color: lighten($main-color, 40%);
-
-// LAYOUT
-
-body {
-  background-color: $background-color;
-  color: $main-color;
+.game{
+  display: block;
+  border: 1px solid black;
   display: flex;
-  flex-direction: column;
-}
-
-.center {
-  display: flex;
-  align-items: center;
   justify-content: center;
+  width: 70%;
+  height: 50%;
+  margin: auto;
+  margin-top: 250px;
 }
-
-// COMPONENTS
-.card {
-  background: white;
-  height: 50vh;
-  width: 50vw;
-  border-radius: 15px;
-  margin-top: 15px;
-  @include basic-box-shadow($accent-color);
+.game-title{
+  width: 100%;
+  height: 20%;
 }
-
-.rando {
+.hearder{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  height: auto;
+  margin: auto;
 
-  btn {
-    height: 2em;
-    background: magenta;
-    color: white;
-    width: 10vmax;
-    text-align: center;
-    padding-top: 5px;
-    font-family: Arial, Helvetica, sans-serif;
-    border-radius: 20px;
-    line-height: 1.5;
+  h1{
+    font-family: 'Stalinist One', cursive;
+    font-size: 24px;
   }
-
-  p {
-    font-family: Arial, Helvetica, sans-serif;
-    color: blueviolet;
-    font-weight: 500;
-    font-size: 5vmin;
+  p{
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 16px;
   }
 }
 
-.image-card {
-  background-image: url("../images/yoda-stitch.jpg");
-  background-position: center;
+.controllers{
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: auto;
+  margin-top: 30px;
+  a{
+    text-decoration: none;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 16px;
+  }
 }
 
-// TYPOGRAPHY
-h2 {
-  font-size: 3rem;
+#game-board{
+  width: 100%;
+  height: 80%;
+  margin: auto;
+  background: yellow;
+  
+}
+
+#board-container{
+  display: flex;
+  flex-direction: row;
+  padding: 30px;
+  width: 80%;
+  margin: auto;
+  justify-content: space-between;
+  canvas{
+    display: block;
+    border: 1px solid gainsboro;
+    background-color: rgb(236, 231, 231);
+    height: 300px;
+    width: 300px;
+  }
 }
