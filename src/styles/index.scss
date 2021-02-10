@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&family=Noto+Sans+JP&family=Stalinist+One&display=swap');
 body{
-  width: 100%;
+  width: 99%;
   height: 100%;
 }
 
@@ -68,7 +68,7 @@ body{
   canvas{
     display: block;
     border: 1px solid gainsboro;
-    background-color: red;
+    background-color: rgb(236, 231, 231);
     height: 300px;
     width: 300px;
   }
