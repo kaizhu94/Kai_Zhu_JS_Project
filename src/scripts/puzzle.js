@@ -18,6 +18,8 @@ export default class Puzzle{
         this.setGameOver = setGameOver;
         this.gameStart = start || false;
 
+       
+
         this.puzzle.addEventListener('mousedown', (e)=>{
             if (this.gameOver) {
                 return;
@@ -35,7 +37,7 @@ export default class Puzzle{
                 this.drawPiece(this.meme ,this.imageIndex[this.lastIndex()], this.lastIndex());
                 this.gameOver = true;
                 this.setGameOver();
-                console.log('gameover in keyup inner loop: '+this.gameOver)
+                // console.log('gameover in keyup inner loop: '+this.gameOver)
             }
         });
 
@@ -83,7 +85,7 @@ export default class Puzzle{
                 
                 this.refreshImagePositions(this.context, this.imageIndex, position, target);
             }
-            console.log('gameover in keydown: '+this.gameOver)
+            // console.log('gameover in keydown: '+this.gameOver)
         });
         
         document.addEventListener('keyup', (e)=>{
@@ -92,7 +94,18 @@ export default class Puzzle{
                 this.drawPiece(this.meme ,this.imageIndex[this.lastIndex()], this.lastIndex());
                 this.gameOver = true;
                 this.setGameOver();
-                console.log('gameover in keyup inner loop: '+this.gameOver)
+                
+                e.preventDefault();
+                console.log("player: "+ this.player)
+                if(this.player == 1){
+                    console.log("I am hitting here")
+                    const wM = document.getElementById("winner_message_1");
+                    wM.classList.add('show')
+                }else{
+                    console.log("I do not hitting here")
+                    const wM = document.getElementById("winner_message_2");
+                    wM.classList.add('show')
+                }
             }
         })
         
@@ -219,13 +232,13 @@ export default class Puzzle{
         } else if (this.isPositionEmpty(imageIndexForPosition, left)) {
             targetPositioin = left;
         } else if (this.isPositionEmpty(imageIndexForPosition, bottom)) {
-            console.log("check for bottom: "+ bottom)
+            // console.log("check for bottom: "+ bottom)
             targetPositioin = bottom;
         } else if (this.isPositionEmpty(imageIndexForPosition, right)) {
             targetPositioin = right;
         }
     
-        console.log('targetPositioin in moveIf can:'+targetPositioin )
+        // console.log('targetPositioin in moveIf can:'+targetPositioin )
         if (targetPositioin >= 0) {
             imageIndexForPosition[targetPositioin] = imageIndexForPosition[position];
             imageIndexForPosition[position] = this.lastIndex();
@@ -247,8 +260,8 @@ export default class Puzzle{
     }
 
     checkIfFinished(imageIndex) {
-        console.log("in checkIfFinish: "+ imageIndex)
-        console.log('correctIndex' + this.correctIndex)
+        // console.log("in checkIfFinish: "+ imageIndex)
+        // console.log('correctIndex' + this.correctIndex)
         for (let index = 0; index < imageIndex.length; index++) {
             if (imageIndex[index] !== this.correctIndex[index]) {
                 return false;

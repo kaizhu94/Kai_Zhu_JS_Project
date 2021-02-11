@@ -4,8 +4,9 @@ import MemeGame from './scripts/game'
 document.addEventListener("DOMContentLoaded", () => {
     const player1Board = document.getElementById('player1Board');
     const player2Board = document.getElementById('player2Board');
-    const game = new MemeGame(player1Board, player2Board)
 
+    const game = new MemeGame(player1Board, player2Board)
+    
 
 
     let selector = document.getElementById('images-selector')
@@ -16,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const start = document.getElementById('start');
     start.addEventListener('click', e=>{
         if(meme !== ''){
-            console.log(game.playing)
+            // console.log(game.playing)
             if(game.playing){
                 alert("You have a game runing, use reset for a new puzzle.")
             }else{
@@ -35,6 +36,11 @@ document.addEventListener("DOMContentLoaded", () => {
             alert("You can't reset before start a game!")
         }
     })
+
+    // winnerMessage1.addEventListener('click', ()=>{
+    //     e.preventDefault();
+    //     winnerMessage.classList.remove('show');
+    // })
 
     
 });

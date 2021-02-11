@@ -6,6 +6,9 @@ export default class MemeGame{
         this.player2 = 2;
         this.cavas1 = player1Board;
         this.cavas2= player2Board;
+
+        
+
         this.playing = false;
         this.setGameOver = this.setGameOver.bind(this);
         this.start = this.start.bind(this);
@@ -19,6 +22,7 @@ export default class MemeGame{
 
     start(meme){
         this.playing = true;
+        // debugger
         this.player1Board = new Puzzle(this.cavas1, this.player1, this.playing, this.setGameOver);
         this.player2Board = new Puzzle(this.cavas2, this.player2, this.playing, this.setGameOver);
         this.player1Board.drawAllImage(meme);
