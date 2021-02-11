@@ -11,6 +11,7 @@ body{
 }
 .under{
   padding-bottom: 10px;
+  width: 100%;
   img{
     width: 20%;
   }
@@ -89,8 +90,8 @@ body{
       background-color: rgba(246, 250, 42, 0.199);
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
-    #puzzle-option:hover{
-      background-color: red;
+    #puzzle-option:focus{
+      background-color: red !important;
     }
   }
   a{
@@ -132,8 +133,15 @@ body{
   canvas{
     display: block;
     border: 1px solid gainsboro;
-    background-color: rgb(236, 231, 231);
     height: 300px;
     width: 300px;
+  }
+  #player1Board{
+    background-image: url('/dist/images/wasd_key.png') , url('/dist/images/mouse_click.png') ;
+    background-size: 42%;
+  }
+  #player2Board{
+    background-image: url('/dist/images/arrow_key2.png'), url('/dist/images/mouse_click.png') ;
+    background-size: 42%;
   }
 }
