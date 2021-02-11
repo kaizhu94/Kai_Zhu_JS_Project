@@ -1,10 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&family=Noto+Sans+JP&family=Stalinist+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@700&display=swap');
 body{
   width: 99%;
   height: 100%;
+  #HappyNewYear{
+    width: 100%;
+    height: 115px;
+  }
+  
+}
+.under{
+  padding-bottom: 10px;
+  img{
+    width: 20%;
+  }
+  display: flex;
+  flex-direction: row;
 }
 
 .game{
+  background: rgb(241, 223, 223);
   display: block;
   border: 1px solid black;
   display: flex;
@@ -12,11 +27,14 @@ body{
   width: 70%;
   height: 50%;
   margin: auto;
-  margin-top: 250px;
 }
 .game-title{
   width: 100%;
   height: 20%;
+  #upper{
+    background-image: url('/dist/images/cownewyear.jpg');
+    background-size: 100%;
+  }
 }
 .hearder{
   display: flex;
@@ -26,14 +44,20 @@ body{
   width: 80%;
   height: auto;
   margin: auto;
+  padding-left: 30px;
+  #image{
+    width: 50px;
+    height: 50px;
 
-  h1{
-    font-family: 'Stalinist One', cursive;
-    font-size: 24px;
+  }
+  #Title{
+    width: 400px;
+    height: 50px;
   }
   p{
+    color: rgba(255, 255, 0, 0.842);
     font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 
@@ -43,10 +67,37 @@ body{
   width: 80%;
   margin: auto;
   margin-top: 30px;
+  padding-bottom: 10px;
+  button{
+    background-color: #f44336; 
+    border-radius: 20px; 
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 16px;
+    color: rgba(255, 255, 0, 0.842);
+    border-color: silver;
+    outline:none;
+  }
+  select{
+    background-color: #f44336; 
+    border-radius: 20px; 
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 16px;
+    color: rgba(255, 255, 0, 0.842);
+    border-color: silver;
+    outline:none;
+    #puzzle-option{
+      background-color: rgba(246, 250, 42, 0.199);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    #puzzle-option:hover{
+      background-color: red;
+    }
+  }
   a{
     text-decoration: none;
     font-family: 'Noto Sans JP', sans-serif;
     font-size: 16px;
+    color: rgba(255, 255, 0, 0.842);
   }
 }
 
@@ -54,8 +105,21 @@ body{
   width: 100%;
   height: 80%;
   margin: auto;
-  background: yellow;
-  
+  background-image: url('/dist/images/cownewyear.jpg');
+  background-size: 100%;
+  #players{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width:50%;
+    margin: auto;
+    padding-top: 20px;
+    
+    img{
+      width: 40px;
+      height: 50px;
+    }
+  }
 }
 
 #board-container{

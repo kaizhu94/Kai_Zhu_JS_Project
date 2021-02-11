@@ -9,38 +9,50 @@
   </head>
 
   <body>
-    <div class="game">
-      <div class="game-title">
-        <div class="hearder">
-          <img src="./dist/images/baozoulol.jpg" alt="Logo" width="50" height="50">
-          <h1>Meme Puzzle Competition</h1>
-          <p>By: Kaihua Zhu</p>
-        </div>
-        <div class="controllers">
-          <button id='start'>Start</button>
-          <button id='reset'>Reset</button>
-          <select  placeholder='Pick your favorite meme' name="images" id="images-selector">
-            <option value="" disabled hidden selected>Select your meme</option>
-            <option value="duewhen_">duewhen</option>
-            <option value="nofriend_">nofrind</option>
-            <option value="whyAA_">whyAA</option>
-          </select>
-          <a href="https://github.com/kaizhu94" target="_blank">Github</a>
-          <a href="https://www.linkedin.com/in/kaihua-zhu-177a041b1/" target="_blank">LinkedIn</a>
-          <a href="https://github.com/kaizhu94/Kai_Zhu_JS_Project/blob/master/README.md" target="_blank">README</a>
-        </div>
-        <div id='game-board'>
-          <div id='board-container'>
-            <canvas id = 'player1Board'  width="300px" height="300px">
-  
-            </canvas> 
-            <canvas id = 'player2Board'  width="300px" height="300px">
-  
-            </canvas>
+    <img id='HappyNewYear' src="./dist/images/HappyNewYear.png" alt="background">
+    <div class='under'>
+      <img id='Duilianzuo' src="./dist/images/Duilianzuo.PNG" alt="background">
+      <div class="game">
+        <div class="game-title">
+          <div id='upper'>
+            <div class="hearder">
+              <img id='image' src="/dist/images/puzzle.png" alt="Logo" width="20" height="50">
+              <img id='Title' src="/dist/images/memepuzzlecom.png" width="20" height="50">
+              <p>By: Kai Zhu</p>
+            </div>
+            <div class="controllers">
+              <button id='start'>Start</button>
+              <button id='reset'>Reset</button>
+              <select  placeholder='Pick your favorite meme' name="images" id="images-selector">
+                <option value="" disabled hidden selected>Select your meme</option>
+                <option id='puzzle-option' value="duewhen_">duewhen</option>
+                <option id='puzzle-option' value="nofriend_">nofrind</option>
+                <option id='puzzle-option' value="whyAA_">whyAA</option>
+              </select>
+              <a href="https://github.com/kaizhu94" target="_blank">Github</a>
+              <a href="https://www.linkedin.com/in/kaihua-zhu-177a041b1/" target="_blank">LinkedIn</a>
+              <a href="https://github.com/kaizhu94/Kai_Zhu_JS_Project/blob/master/README.md" target="_blank">README</a>
+            </div>
+
+          </div>
+          <div id='game-board'>
+            <div id = 'players'>
+              <img id='player' src="./dist/images/1.png" >
+              <img id='player' src="./dist/images/2.png" >
+            </div>
+            <div id='board-container'>
+              <canvas id = 'player1Board'  width="300px" height="300px">
+    
+              </canvas> 
+              <canvas id = 'player2Board'  width="300px" height="300px">
+    
+              </canvas>
+            </div>
           </div>
         </div>
       </div>
+      <img id='Duilianzuo' src="./dist/images/Duilianyou.PNG" alt="background">
+      <script src="./dist/main.js"></script>
     </div>
-    <script src="./dist/main.js"></script>
   </body>
 </html>
