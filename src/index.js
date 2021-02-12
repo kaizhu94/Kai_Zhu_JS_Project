@@ -35,10 +35,10 @@ document.addEventListener("DOMContentLoaded", () => {
     
     const classes = document.getElementsByClassName('intro');
     const intro = classes[0]
-    window.addEventListener('click', (e)=>{
-        e.preventDefault();
+    intro.addEventListener('click', (e)=>{
         intro.classList.add('off');
     })
+    
 
     
     let selector = document.getElementById('images-selector')
