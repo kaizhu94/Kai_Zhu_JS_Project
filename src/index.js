@@ -49,7 +49,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const start = document.getElementById('start');
     start.addEventListener('click', e=>{
-        // backgroundMusic.play();
         if(meme !== ''){
             if(game.playing){
                 alert("You have a game runing, use reset for a new puzzle.")

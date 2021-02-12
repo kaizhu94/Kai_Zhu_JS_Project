@@ -43,8 +43,7 @@ export default class Puzzle{
             }
         });
 
-        document.addEventListener('keydown', (e)=>{
-            
+        document.addEventListener('keydown', (e)=>{      
             let position = -1;
             if(this.player === 2){
                 if (e.key== 'ArrowLeft') {  // left
@@ -67,22 +66,14 @@ export default class Puzzle{
                 position = this.topOfPosition(this.puzzle.emptyPosition);
             }
             }
-            
-            
-        
             if (this.gameOver) {
                 return;
             }
-        
             if (position < 0 || position > this.lastIndex()) {
                 return;
             } 
-        
-           
             let target = this.moveImageIfCanAtPosition(this.imageIndex, this.puzzle, position);
-            
             if (target >= 0) {
-                
                 this.refreshImagePositions(this.context, this.imageIndex, position, target);
             }
         });
