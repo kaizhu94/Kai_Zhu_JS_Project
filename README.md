@@ -1,4 +1,4 @@
-#Meme Puzzle Generator
+# Meme Puzzle Generator
 [Live Demo]()
 
 ## Background
