@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&family=Noto+Sans+JP&family=Stalinist+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Aladin&family=Fugaz+One&display=swap');
 body{
   width: 99%;
   height: 100%;
@@ -174,3 +174,51 @@ body{
   display: block;
 }
 
+.intro{
+  display: block;
+  border: 1px solid gainsboro;
+  width: 40%;
+  height: 45%;
+  background-image: url('/dist/images/modal_background.jpg');
+  background-size: 100%;
+  z-index: 10;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  .intro-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+    #close-modal{
+      position: absolute;
+      z-index: 15;
+      font-family: none;
+      font-size: 30px;
+      bottom:300px;
+      left: 420px;
+    }
+    *{
+      margin: 15px;
+      font-family: 'Aladin', cursive;
+      color: rgb(19, 2, 2);
+    }
+    h3{
+      font-size: 24px;
+    }
+    p{
+      font-size: 18px;
+    }
+    ol{
+      margin: 0px;
+      padding-left: 20px;
+    }
+  }
+}
+
+.intro.off{
+  display: none;
+}

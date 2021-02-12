@@ -7,7 +7,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const game = new MemeGame(player1Board, player2Board)
     
-
+    const classes = document.getElementsByClassName('intro');
+    const intro = classes[0]
+    window.addEventListener('click', (e)=>{
+        e.preventDefault();
+        intro.classList.add('off');
+    })
 
     let selector = document.getElementById('images-selector')
     let meme = '';
