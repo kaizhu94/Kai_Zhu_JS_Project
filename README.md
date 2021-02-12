@@ -1,3 +1,5 @@
+#Meme Puzzle Generator
+[Live Demo]()
 
 ## Background
 Have you ever fight for a meme with your friends because you want to show that you loved this meme so much. Here is where Meme Puzzle Competition comes in. In this game, you can compete with a friend for the speed in solving the puzzle. The more you love the meme, the faster you can do it!
@@ -29,16 +31,105 @@ This app will be a single screen app. The navbar will include the the Github lin
 
 ## Architecture and Technologies
 * `Javascript` for game logic
-* `Canvas` for drawing images( Need to use Canvas to split the image into 9 equally pieces, and I don't know how yet)
+* `Canvas` for drawing images
 * `HTML5` for effects rendering
 * `Webpack` for the JS module bundler
 
 In addition to the entry file, the following scripts are employed to support the game implementation:
-* game.js: this script will handle the logic for start the game and reset the game. 
-* player.js: this script will handle the logic for the player.
+* game.js: this script will handle the logic for start the game and reset the game.
 * puzzle.js: this script will handle the logic for the puzzle.
 
 
+***
+
+## Challenges
+* Google's new Audio police requires user interact with the DOM before autoplay the music.
+```Javascript
+    const backgroundMusic = document.getElementById('background_music')
+    let isMusicOn = false;
+    function playMusic(){
+        backgroundMusic.play();
+        isMusicOn = true;
+        document.removeEventListener('keypress', playMusic)
+    }
+
+    document.addEventListener('keypress', playMusic)
+
+    const pauseMusic = document.getElementById('pause');
+
+    pauseMusic.addEventListener('click', (e)=>{
+        e.preventDefault();
+        if(isMusicOn){
+            backgroundMusic.pause();
+            isMusicOn = false;
+        }else{
+            backgroundMusic.play();
+            isMusicOn = true;
+        }
+    })
+```
+* To update the puzzle, first of all, need to determine which key being press then find out which piece is movable around the empty space. Set that piece as current position and empty spot will be the target position. Employed Canva to clear image on the old position and draw the new one on the new position.
+```Javascript
+        document.addEventListener('keydown', (e)=>{      
+            let position = -1;
+            if(this.player === 2){
+                if (e.key== 'ArrowLeft') {  // left
+                    position = this.rightOfPosition(this.puzzle.emptyPosition);
+                } else if (e.key == 'ArrowUp') { // up
+                    position = this.bottomOfPosition(this.puzzle.emptyPosition);
+                } else if (e.key == 'ArrowRight') { //right
+                    position = this.leftOfPosition(this.puzzle.emptyPosition);
+                } else if (e.key == 'ArrowDown') { // down
+                    position = this.topOfPosition(this.puzzle.emptyPosition);
+                }
+            } else{
+                if (e.key == 'a') { // A
+                position = this.rightOfPosition(this.puzzle.emptyPosition);
+            } else if (e.key == 'w') { // W
+                position = this.bottomOfPosition(this.puzzle.emptyPosition);
+            } else if (e.key == 'd') { // D
+                position = this.leftOfPosition(this.puzzle.emptyPosition);
+            } else if (e.key == 's') { // S
+                position = this.topOfPosition(this.puzzle.emptyPosition);
+            }
+            }
+            if (this.gameOver) {
+                return;
+            }
+            if (position < 0 || position > this.lastIndex()) {
+                return;
+            } 
+            let target = this.moveImageIfCanAtPosition(this.imageIndex, this.puzzle, position);
+            if (target >= 0) {
+                this.refreshImagePositions(this.context, this.imageIndex, position, target);
+            }
+        });
+```
+* Mouse click requires to use offset and parseInt methods to caluculate current row and column the user is clicking on the puzzle.
+```javascript
+        this.puzzle.addEventListener('mousedown', (e)=>{
+            if (this.gameOver) {
+                return;
+            }
+            let x = parseInt(e.offsetX / (this.padding + this.imageWidth));
+            let y = parseInt(e.offsetY / (this.padding + this.imageWidth));
+
+            let position = y * this.column + x;
+            let target = this.moveImageIfCanAtPosition(this.imageIndex, this.puzzle, position);
+            
+            if (target >= 0){
+                this.refreshImagePositions(this.context, this.imageIndex, position, target);
+            }
+            if (this.checkIfFinished(this.imageIndex)) {
+                this.drawPiece(this.meme ,this.imageIndex[this.lastIndex()], this.lastIndex());
+                this.gameOver = true;
+                this.setGameOver();
+
+                e.preventDefault();
+                this.printWinner();
+            }
+        });
+```
 ***
 
 ## Implementation Timeline
