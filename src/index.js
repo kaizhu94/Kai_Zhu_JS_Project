@@ -1,10 +1,12 @@
 import "./styles/index.scss";
 import MemeGame from './scripts/game'
 
+
 document.addEventListener("DOMContentLoaded", () => {
+    
     const player1Board = document.getElementById('player1Board');
     const player2Board = document.getElementById('player2Board');
-
+    
     const game = new MemeGame(player1Board, player2Board)
     
     const classes = document.getElementsByClassName('intro');
@@ -13,7 +15,9 @@ document.addEventListener("DOMContentLoaded", () => {
         e.preventDefault();
         intro.classList.add('off');
     })
-
+    const backgroudMusic = new Audio('../dist/sound/background_music.mp3');
+    backgroudMusic.play();
+    
     let selector = document.getElementById('images-selector')
     let meme = '';
     selector.addEventListener('click', e=>{

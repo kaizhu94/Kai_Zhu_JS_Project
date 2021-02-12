@@ -105,6 +105,7 @@ export default class Puzzle{
     }
     moveSound(){
         const move = new Audio("../../dist/sound/done.mp3");
+        move.volume = 0.2;
         move.play();
     }
 
