@@ -42,10 +42,5 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     })
 
-    // winnerMessage1.addEventListener('click', ()=>{
-    //     e.preventDefault();
-    //     winnerMessage.classList.remove('show');
-    // })
-
     
 });
