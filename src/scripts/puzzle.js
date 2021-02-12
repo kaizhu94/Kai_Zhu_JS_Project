@@ -79,15 +79,12 @@ export default class Puzzle{
             } 
         
            
-            // console.log('position: ' + position)
-            // console.log('imageIndex:' +this.imageIndex)
             let target = this.moveImageIfCanAtPosition(this.imageIndex, this.puzzle, position);
-            // console.log('target: ' + target)
+            
             if (target >= 0) {
                 
                 this.refreshImagePositions(this.context, this.imageIndex, position, target);
             }
-            // console.log('gameover in keydown: '+this.gameOver)
         });
         
         document.addEventListener('keyup', (e)=>{
@@ -119,6 +116,17 @@ export default class Puzzle{
             wM.classList.add('show')
         }
     }
+
+    removeWinner(){
+        if(this.player == 1){
+            const wM = document.getElementById("winner_message_1");
+            wM.classList.remove('show')
+        }else{
+            const wM = document.getElementById("winner_message_2");
+            wM.classList.remove('show')
+        }
+    }
+
     gameFinished(){
         this.gameOver = true;
     }
@@ -140,15 +148,13 @@ export default class Puzzle{
 
     // drawing a single piece of puzzle
     drawPiece(meme, index, position) {
-        // console.log('index' + index)
+        
         this.meme = meme;
 
         let img = new Image();
         img.src = `../../dist/images/${meme}` + String(index+1) + '.jpg';
         img.onload = () => {
             let rect = this.rectForPosition(position);
-            // console.log('position: '+ position)
-            // console.log('rect: '+ rect)
             this.context.drawImage(img, rect[0], rect[1], rect[2], rect[3]);
             this.moveSound();
         }
@@ -161,7 +167,7 @@ export default class Puzzle{
             if (index === this.lastIndex()) {
                 continue;
             }
-            // console.log('index' + index)
+            
             this.drawPiece(meme,index, position);
         }
     }
@@ -185,9 +191,8 @@ export default class Puzzle{
         }
         canvas.emptyPosition = this.emptyPosition;
         
-    
-        
-        let times = 10;
+        //double check this index is valid. 
+        let times = 15;
         while (times--) {
             
             let direction = parseInt(Math.random() * 4);
@@ -205,7 +210,7 @@ export default class Puzzle{
             if (target < 0 || target > this.lastIndex()) {  
                 continue;
             }
-            // console.log('imageIndexForPosition in randomsetup: '+ imageIndexForPosition)
+            
             let result = this.moveImageIfCanAtPosition(imageIndexForPosition, canvas, target);
             if (result >= 0) { 
                 this.emptyPosition = target;
@@ -217,7 +222,7 @@ export default class Puzzle{
 
     // return true if that positon is empty
     isPositionEmpty (imageIndexForPosition, position) {
-        // console.log("imageIndexForPosition in isPosition: "+ imageIndexForPosition)
+        
         if (position < 0 || position > this.lastIndex()) {
             return false;
         } 
@@ -234,20 +239,18 @@ export default class Puzzle{
         let left = this.leftOfPosition(position);
         let bottom = this.bottomOfPosition(position);
         let right = this.rightOfPosition(position);
-        // console.log("imageIndexForPosition: "+imageIndexForPosition)
+        
         let targetPositioin = -1; 
         if (this.isPositionEmpty(imageIndexForPosition, top)) {
             targetPositioin = top;
         } else if (this.isPositionEmpty(imageIndexForPosition, left)) {
             targetPositioin = left;
         } else if (this.isPositionEmpty(imageIndexForPosition, bottom)) {
-            // console.log("check for bottom: "+ bottom)
             targetPositioin = bottom;
         } else if (this.isPositionEmpty(imageIndexForPosition, right)) {
             targetPositioin = right;
         }
     
-        // console.log('targetPositioin in moveIf can:'+targetPositioin )
         if (targetPositioin >= 0) {
             imageIndexForPosition[targetPositioin] = imageIndexForPosition[position];
             imageIndexForPosition[position] = this.lastIndex();
@@ -263,14 +266,10 @@ export default class Puzzle{
     
         context.clearRect(originRect[0], originRect[1], originRect[2], originRect[3]);
 
-        // console.log("In refresh")
-        // console.log('target: ' + target)
         this.drawPiece(this.meme, imageIndexForPosition[target], target);
     }
 
     checkIfFinished(imageIndex) {
-        // console.log("in checkIfFinish: "+ imageIndex)
-        // console.log('correctIndex' + this.correctIndex)
         for (let index = 0; index < imageIndex.length; index++) {
             if (imageIndex[index] !== this.correctIndex[index]) {
                 return false;
@@ -285,6 +284,7 @@ export default class Puzzle{
             this.imageIndex = this.setupRandomPosition(this.puzzle);
             this.drawAllImage(meme)
             this.gameOver = false
+            this.removeWinner();
         }
     }
 
