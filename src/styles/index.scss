@@ -177,7 +177,7 @@ body{
 .intro{
   display: block;
   border: 1px solid gainsboro;
-  width: 40%;
+  width: 50%;
   height: 45%;
   background-image: url('/dist/images/modal_background.jpg');
   background-size: 100%;
@@ -193,6 +193,7 @@ body{
     align-items: center;
     width: 80%;
     margin: auto;
+
     #close-modal{
       position: absolute;
       z-index: 15;
@@ -215,6 +216,28 @@ body{
     ol{
       margin: 0px;
       padding-left: 20px;
+    }
+  }
+}
+
+.modal-head-container{
+  width: 100%;
+  margin: auto;
+  .modal-head{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .modal-head-left{
+      width: 30px;
+    }
+    img{
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+    img:hover{
+      background-color: rgb(245, 80, 80);
+      cursor: pointer;
     }
   }
 }

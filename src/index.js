@@ -38,7 +38,12 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener('click', (e)=>{
         intro.classList.add('off');
     })
-    
+
+
+    const xButton = document.getElementById('xButton');
+    xButton.addEventListener('click', (e)=>{
+        intro.classList.add('off');
+    })
 
     
     let selector = document.getElementById('images-selector')
