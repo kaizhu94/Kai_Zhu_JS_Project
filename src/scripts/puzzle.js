@@ -37,7 +37,9 @@ export default class Puzzle{
                 this.drawPiece(this.meme ,this.imageIndex[this.lastIndex()], this.lastIndex());
                 this.gameOver = true;
                 this.setGameOver();
-                // console.log('gameover in keyup inner loop: '+this.gameOver)
+
+                e.preventDefault();
+                this.printWinner();
             }
         });
 
@@ -96,16 +98,7 @@ export default class Puzzle{
                 this.setGameOver();
                 
                 e.preventDefault();
-                console.log("player: "+ this.player)
-                if(this.player == 1){
-                    console.log("I am hitting here")
-                    const wM = document.getElementById("winner_message_1");
-                    wM.classList.add('show')
-                }else{
-                    console.log("I do not hitting here")
-                    const wM = document.getElementById("winner_message_2");
-                    wM.classList.add('show')
-                }
+                this.printWinner();
             }
         })
         
@@ -115,6 +108,16 @@ export default class Puzzle{
         move.play();
     }
 
+
+    printWinner(){
+        if(this.player == 1){
+            const wM = document.getElementById("winner_message_1");
+            wM.classList.add('show')
+        }else{
+            const wM = document.getElementById("winner_message_2");
+            wM.classList.add('show')
+        }
+    }
     gameFinished(){
         this.gameOver = true;
     }
