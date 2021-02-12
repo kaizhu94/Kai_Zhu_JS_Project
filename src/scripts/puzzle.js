@@ -18,7 +18,7 @@ export default class Puzzle{
         this.setGameOver = setGameOver;
         this.gameStart = start || false;
 
-       
+        
 
         this.puzzle.addEventListener('mousedown', (e)=>{
             if (this.gameOver) {
@@ -110,6 +110,11 @@ export default class Puzzle{
         })
         
     }
+    moveSound(){
+        const move = new Audio("../../dist/sound/done.mp3");
+        move.play();
+    }
+
     gameFinished(){
         this.gameOver = true;
     }
@@ -141,7 +146,7 @@ export default class Puzzle{
             // console.log('position: '+ position)
             // console.log('rect: '+ rect)
             this.context.drawImage(img, rect[0], rect[1], rect[2], rect[3]);
-            
+            this.moveSound();
         }
     }
 
