@@ -15,7 +15,9 @@ document.addEventListener("DOMContentLoaded", () => {
         e.preventDefault();
         intro.classList.add('off');
     })
-    const backgroudMusic = new Audio('../dist/sound/background_music.mp3');
+
+    const backgroudMusic = document.getElementById('background_music')
+    backgroudMusic.loop = true;
     backgroudMusic.play();
     
     let selector = document.getElementById('images-selector')
@@ -45,6 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
             alert("You can't reset before start a game!")
         }
     })
+
 
     
 });
