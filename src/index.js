@@ -35,9 +35,9 @@ document.addEventListener("DOMContentLoaded", () => {
     
     const classes = document.getElementsByClassName('intro');
     const intro = classes[0]
-    // window.addEventListener('click', (e)=>{
-    //     intro.classList.add('off');
-    // })
+    window.addEventListener('click', (e)=>{
+        intro.classList.add('off');
+    })
 
 
     const xButton = document.getElementById('xButton');
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let meme = '';
     let selector = document.getElementById('images-selector')
     selector.addEventListener('click', e=>{
-        // e.preventDefault();
+        e.preventDefault();
         console.log("before select, meme is : "+ meme)
         meme = e.target.value
         console.log("after select, meme is : "+ meme)
