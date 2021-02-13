@@ -35,7 +35,7 @@ export default class MemeGame{
             this.player1Board.reset(meme);
             this.player2Board.reset(meme);
         }else{
-            alert("You can't reset a empty game!")
+            alert("You can't reset an empty game!")
         }
     }
 }

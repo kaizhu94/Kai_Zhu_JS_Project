@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const start = document.getElementById('start');
     start.addEventListener('click', e=>{
         e.preventDefault();
-        if(meme !== ''){
+        if(meme.length !== 0){
             if(game.playing){
                 alert("You have a game runing, use reset for a new puzzle.")
             }else{
@@ -72,7 +72,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const reset = document.getElementById('reset');
     reset.addEventListener('click', e=>{
-        if(meme !== ''){
+        e.preventDefault();
+        if(meme.length !== 0){
             console.log("before reset game, meme is : "+ meme)
             game.reset(meme);
         }else{
