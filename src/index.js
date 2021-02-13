@@ -48,9 +48,11 @@ document.addEventListener("DOMContentLoaded", () => {
     
     let selector = document.getElementById('images-selector')
     let meme = '';
+    console.log("before select, meme is : "+ meme)
     selector.addEventListener('click', e=>{
         e.preventDefault();
         meme = e.currentTarget.value
+        console.log("after select, meme is : "+ meme)
     })
 
     const start = document.getElementById('start');
@@ -60,6 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if(game.playing){
                 alert("You have a game runing, use reset for a new puzzle.")
             }else{
+                console.log("before start game, meme is : "+ meme)
                 game.start(meme);
             }
         }else{
@@ -70,6 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const reset = document.getElementById('reset');
     reset.addEventListener('click', e=>{
         if(meme !== ''){
+            console.log("before reset game, meme is : "+ meme)
             game.reset(meme);
         }else{
             alert("You can't reset before start a game!")
