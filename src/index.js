@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let meme = '';
     console.log("before select, meme is : "+ meme)
     selector.addEventListener('click', e=>{
-        e.preventDefault();
+        // e.preventDefault();
         meme = e.currentTarget.value
         console.log("after select, meme is : "+ meme)
     })
@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const reset = document.getElementById('reset');
     reset.addEventListener('click', e=>{
-        e.preventDefault();
+        // e.preventDefault();
         if(meme.length !== 0){
             console.log("before reset game, meme is : "+ meme)
             game.reset(meme);
