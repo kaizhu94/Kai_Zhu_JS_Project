@@ -46,11 +46,11 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
     
-    let selector = document.getElementById('images-selector')
     let meme = '';
-    console.log("before select, meme is : "+ meme)
+    let selector = document.getElementById('images-selector')
     selector.addEventListener('click', e=>{
         // e.preventDefault();
+        console.log("before select, meme is : "+ meme)
         meme = e.currentTarget.value
         console.log("after select, meme is : "+ meme)
     })
