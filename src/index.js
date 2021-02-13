@@ -49,13 +49,13 @@ document.addEventListener("DOMContentLoaded", () => {
     let selector = document.getElementById('images-selector')
     let meme = '';
     selector.addEventListener('click', e=>{
-        // e.preventDefault();
+        e.preventDefault();
         meme = e.currentTarget.value
     })
 
     const start = document.getElementById('start');
     start.addEventListener('click', e=>{
-        // e.preventDefault();
+        e.preventDefault();
         if(meme !== ''){
             if(game.playing){
                 alert("You have a game runing, use reset for a new puzzle.")
