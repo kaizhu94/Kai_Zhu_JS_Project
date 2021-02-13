@@ -34,7 +34,7 @@ body{
   width: 100%;
   height: 20%;
   #upper{
-    background-image: url('/dist/images/cownewyear.jpg');
+    background-image: url('https://raw.githubusercontent.com/kaizhu94/Kai_Zhu_JS_Project/gh_pages/dist/images/cownewyear.jpg');
     background-size: 100%;
   }
 }
@@ -107,7 +107,7 @@ body{
   width: 100%;
   height: 80%;
   margin: auto;
-  background-image: url('/dist/images/cownewyear.jpg');
+  background-image: url('https://raw.githubusercontent.com/kaizhu94/Kai_Zhu_JS_Project/gh_pages/dist/images/cownewyear.jpg');
   background-size: 100%;
   #players{
     display: flex;
@@ -138,11 +138,11 @@ body{
     width: 300px;
   }
   #player1Board{
-    background-image: url('/dist/images/wasd_key.png') , url('/dist/images/mouse_click.png') ;
+    background-image: url('https://raw.githubusercontent.com/kaizhu94/Kai_Zhu_JS_Project/gh_pages/dist/images/wasd_key.png'), url('https://raw.githubusercontent.com/kaizhu94/Kai_Zhu_JS_Project/gh_pages/dist/images/mouse_click.png') ;
     background-size: 42%;
   }
   #player2Board{
-    background-image: url('/dist/images/arrow_key2.png'), url('/dist/images/mouse_click.png') ;
+    background-image: url('https://raw.githubusercontent.com/kaizhu94/Kai_Zhu_JS_Project/gh_pages/dist/images/arrow_key2.png'), url('https://raw.githubusercontent.com/kaizhu94/Kai_Zhu_JS_Project/gh_pages/dist/images/mouse_click.png') ;
     background-size: 42%;
   }
 }

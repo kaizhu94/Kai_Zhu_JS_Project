@@ -92,7 +92,7 @@ export default class Puzzle{
         
     }
     moveSound(){
-        const move = new Audio("../../dist/sound/done.mp3");
+        const move = new Audio("https://raw.githubusercontent.com/kaizhu94/Kai_Zhu_JS_Project/gh_pages/dist/sound/done.mp3");
         move.volume = 0.2;
         move.play();
     }
@@ -143,7 +143,8 @@ export default class Puzzle{
         this.meme = meme;
 
         let img = new Image();
-        img.src = `../../dist/images/${meme}` + String(index+1) + '.jpg';
+        img.src = `https://raw.githubusercontent.com/kaizhu94/Kai_Zhu_JS_Project/gh_pages/dist/images/${meme}` + String(index+1) + '.jpg';
+        // https://raw.githubusercontent.com/kaizhu94/Kai_Zhu_JS_Project/gh_pages/dist/images/whyAA_1.jpg
         img.onload = () => {
             let rect = this.rectForPosition(position);
             this.context.drawImage(img, rect[0], rect[1], rect[2], rect[3]);
