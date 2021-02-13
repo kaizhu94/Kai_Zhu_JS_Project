@@ -50,9 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let selector = document.getElementById('images-selector')
     selector.addEventListener('change', e=>{
         e.preventDefault();
-        console.log("before select, meme is : "+ meme)
         meme = e.target.value
-        console.log("after select, meme is : "+ meme)
     })
 
     const start = document.getElementById('start');
@@ -62,7 +60,6 @@ document.addEventListener("DOMContentLoaded", () => {
             if(game.playing){
                 alert("You have a game runing, use reset for a new puzzle.")
             }else{
-                console.log("before start game, meme is : "+ meme)
                 game.start(meme);
             }
         }else{
@@ -74,7 +71,6 @@ document.addEventListener("DOMContentLoaded", () => {
     reset.addEventListener('click', e=>{
         // e.preventDefault();
         if(meme.length !== 0){
-            console.log("before reset game, meme is : "+ meme)
             game.reset(meme);
         }else{
             alert("You can't reset before start a game!")
