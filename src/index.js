@@ -35,9 +35,9 @@ document.addEventListener("DOMContentLoaded", () => {
     
     const classes = document.getElementsByClassName('intro');
     const intro = classes[0]
-    window.addEventListener('click', (e)=>{
-        intro.classList.add('off');
-    })
+    // window.addEventListener('click', (e)=>{
+    //     intro.classList.add('off');
+    // })
 
 
     const xButton = document.getElementById('xButton');
