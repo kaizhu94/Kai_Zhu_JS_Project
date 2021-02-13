@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
     selector.addEventListener('click', e=>{
         // e.preventDefault();
         console.log("before select, meme is : "+ meme)
-        meme = e.currentTarget.value
+        meme = e.target.value
         console.log("after select, meme is : "+ meme)
     })
 
