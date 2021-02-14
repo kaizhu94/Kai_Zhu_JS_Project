@@ -77,5 +77,4 @@ document.addEventListener("DOMContentLoaded", () => {
             alert("You can't reset before start a game!")
         }
     })
-
 });
