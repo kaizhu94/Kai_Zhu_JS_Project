@@ -6,13 +6,18 @@ import MemeGame from './scripts/game'
 document.addEventListener("DOMContentLoaded", () => {
     const backgroundMusic = document.getElementById('background_music')
     let isMusicOn = false;
-    function playMusic(){
-        backgroundMusic.play();
-        isMusicOn = true;
-        document.removeEventListener('keypress', playMusic)
-    }
 
-    document.addEventListener('keypress', playMusic)
+    document.addEventListener('keypress', e =>{
+        if (e.key === ' ' || e.key === 'Spacebar') {
+            if(isMusicOn){
+                backgroundMusic.pause();
+                isMusicOn = false;
+            }else{
+                backgroundMusic.play();
+                isMusicOn = true;
+            }
+        }
+    })
 
     const pauseMusic = document.getElementById('pause');
 
