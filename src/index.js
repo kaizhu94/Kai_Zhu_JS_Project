@@ -50,15 +50,16 @@ document.addEventListener("DOMContentLoaded", () => {
         intro.classList.add('off');
     })
 
+    const originMeme =  document.getElementById('original-meme');
     
     let meme = '';
     let selector = document.getElementById('images-selector')
     selector.addEventListener('change', e=>{
         e.preventDefault();
         meme = e.target.value
+        originMeme.src = `https://raw.githubusercontent.com/kaizhu94/Kai_Zhu_JS_Project/gh_pages/dist/images/${meme}`+'.PNG';
     })
 
-    const originMeme =  document.getElementById('original-meme');
 
     const start = document.getElementById('start');
     start.addEventListener('click', e=>{
@@ -67,7 +68,6 @@ document.addEventListener("DOMContentLoaded", () => {
             if(game.playing){
                 alert("You have a game runing, use reset for a new puzzle.")
             }else{
-                originMeme.src = `https://raw.githubusercontent.com/kaizhu94/Kai_Zhu_JS_Project/gh_pages/dist/images/${meme}`;
                 originMeme.classList.add('show');
                 game.start(meme);
             }
@@ -80,7 +80,6 @@ document.addEventListener("DOMContentLoaded", () => {
     reset.addEventListener('click', e=>{
         // e.preventDefault();
         if(meme.length !== 0){
-            originMeme.src = `https://raw.githubusercontent.com/kaizhu94/Kai_Zhu_JS_Project/gh_pages/dist/images/${meme}.PNG`;
             game.reset(meme);
         }else{
             alert("You can't reset before start a game!")
