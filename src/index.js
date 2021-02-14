@@ -7,6 +7,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const backgroundMusic = document.getElementById('background_music')
     let isMusicOn = false;
 
+    document.addEventListener('keydown', e =>{
+        if (e.key === ' ' || e.key === 'Spacebar') {
+            if(isMusicOn){
+                backgroundMusic.pause();
+                isMusicOn = false;
+            }else{
+                backgroundMusic.play();
+                isMusicOn = true;
+            }
+        }
+    })
+
     const pauseMusic = document.getElementById('pause');
 
     pauseMusic.addEventListener('click', (e)=>{
