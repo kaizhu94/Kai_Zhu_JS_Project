@@ -44,6 +44,7 @@ export default class Puzzle{
         });
 
         document.addEventListener('keydown', (e)=>{      
+            e.preventDefault();
             let position = -1;
             if(this.player === 2){
                 if (e.key== 'ArrowLeft') {  // left
@@ -279,24 +280,28 @@ export default class Puzzle{
         }
     }
 
-    //return true if it is valid to move left
+    //return new position if it is valid to move left
     leftOfPosition(position) {
-        return (position % this.column) === 0 ? -1 : position - 1;
+        let newPosition = (position % this.column) === 0 ? -1 : position - 1;
+        return newPosition;
     }
 
-    //return true if it is valid to move right
+    //return position if it is valid to move right
     rightOfPosition(position) {
-        return (position % this.column) === (this.column - 1) ? -1 : position + 1;
+        let newPosition = (position % this.column) === (this.column - 1) ? -1 : position + 1;
+        return newPosition;
     }
 
-   //return true if it is valid to move top
+   //return position if it is valid to move top
     topOfPosition(position) {
-        return position - this.column;
+        let newPosition = position - this.column;
+        return newPosition;
     }
 
-  //return true if it is valid to move down
+  //return position if it is valid to move down
     bottomOfPosition(position) {
-        return position + this.column;
+        let newPosition = position + this.column;
+        return newPosition;
     }
 
 }
