@@ -256,3 +256,15 @@ body{
   position: absolute;
   top: 250px;
 }
+
+
+#original-meme{
+  display: none;
+  position: absolute;
+  width: 200px;
+  height: 200px;
+}
+
+#original-meme.show{
+  display: block;
+}

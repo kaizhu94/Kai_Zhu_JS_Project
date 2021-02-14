@@ -144,7 +144,6 @@ export default class Puzzle{
 
         let img = new Image();
         img.src = `https://raw.githubusercontent.com/kaizhu94/Kai_Zhu_JS_Project/gh_pages/dist/images/${meme}` + String(index+1) + '.jpg';
-        // https://raw.githubusercontent.com/kaizhu94/Kai_Zhu_JS_Project/gh_pages/dist/images/whyAA_1.jpg
         img.onload = () => {
             let rect = this.rectForPosition(position);
             this.context.drawImage(img, rect[0], rect[1], rect[2], rect[3]);
