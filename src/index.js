@@ -40,14 +40,18 @@ document.addEventListener("DOMContentLoaded", () => {
     
     const classes = document.getElementsByClassName('intro');
     const intro = classes[0]
-    window.addEventListener('click', (e)=>{
-        intro.classList.add('off');
-    })
-
+   
 
     const xButton = document.getElementById('xButton');
     xButton.addEventListener('click', (e)=>{
+        e.preventDefault();
         intro.classList.add('off');
+    })
+
+    const questionMark = document.getElementById('question');
+    questionMark.addEventListener('click', (e)=>{
+        e.preventDefault();
+        intro.classList.remove('off');
     })
 
     const originMeme =  document.getElementById('original-meme');
@@ -58,6 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
         e.preventDefault();
         meme = e.target.value
         originMeme.src = `https://raw.githubusercontent.com/kaizhu94/Kai_Zhu_JS_Project/gh_pages/dist/images/${meme}`+'.PNG';
+        originMeme.classList.add('show');
     })
 
 
@@ -68,7 +73,6 @@ document.addEventListener("DOMContentLoaded", () => {
             if(game.playing){
                 alert("You have a game runing, use reset for a new puzzle.")
             }else{
-                originMeme.classList.add('show');
                 game.start(meme);
             }
         }else{
