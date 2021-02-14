@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
     reset.addEventListener('click', e=>{
         // e.preventDefault();
         if(meme.length !== 0){
-            originMeme.src = `https://raw.githubusercontent.com/kaizhu94/Kai_Zhu_JS_Project/gh_pages/dist/images/${meme}`+'.PNG';
+            originMeme.src = `https://raw.githubusercontent.com/kaizhu94/Kai_Zhu_JS_Project/gh_pages/dist/images/${meme}.PNG`;
             game.reset(meme);
         }else{
             alert("You can't reset before start a game!")
