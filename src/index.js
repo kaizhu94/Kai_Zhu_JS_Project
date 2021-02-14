@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const backgroundMusic = document.getElementById('background_music')
     let isMusicOn = false;
 
-    document.addEventListener('keypress', e =>{
+    document.addEventListener('keydown', e =>{
         if (e.key === ' ' || e.key === 'Spacebar') {
             if(isMusicOn){
                 backgroundMusic.pause();
@@ -89,7 +89,4 @@ document.addEventListener("DOMContentLoaded", () => {
             alert("You can't reset before start a game!")
         }
     })
-
-    
-    
 });
