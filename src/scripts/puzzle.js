@@ -165,23 +165,23 @@ export default class Puzzle{
     }
 
     //gives a randon position array
-    setupRandomPosition(canvas) {
+    setupRandomPosition(puzzle) {
         let list1 = [4, 3, 2, 8, 0, 7, 5, 6, 1];
         let list2 = [2, 0, 5, 6, 8, 7, 3, 1, 4];
         let list3 = [3, 7, 2, 4, 1, 6, 8, 0, 5];
         let list4 = [3, 2, 4, 1, 7, 6, 5, 0, 8];
         let lists = [list1, list2, list3, list4];
     
-        let imageIndexForPosition = lists[parseInt(Math.random() * 4)];
+        let imageIndex = lists[parseInt(Math.random() * 4)];
     
         
-        for (let i = imageIndexForPosition.length - 1; i >= 0; i--) {
-            if (imageIndexForPosition[i] == this.lastIndex()) {
+        for (let i = imageIndex.length - 1; i >= 0; i--) {
+            if (imageIndex[i] == this.lastIndex()) {
                 this.emptyPosition = i;
                 break;
             }
         }
-        canvas.emptyPosition = this.emptyPosition;
+        puzzle.emptyPosition = this.emptyPosition;
         
         //double check this index is valid. 
         let times = 15;
@@ -203,13 +203,13 @@ export default class Puzzle{
                 continue;
             }
             
-            let result = this.moveImageIfCanAtPosition(imageIndexForPosition, canvas, target);
+            let result = this.moveImageIfCanAtPosition(imageIndex, puzzle, target);
             if (result >= 0) { 
                 this.emptyPosition = target;
             }
         }
     
-        return imageIndexForPosition;
+        return imageIndex;
     }
 
     // return true if that positon is empty
@@ -226,39 +226,39 @@ export default class Puzzle{
     }
 
     //test which direct is possible to move
-    moveImageIfCanAtPosition(imageIndexForPosition, canvas, position) {
+    moveImageIfCanAtPosition(imageIndex, puzzle, position) {
         let top = this.topOfPosition(position);
         let left = this.leftOfPosition(position);
         let bottom = this.bottomOfPosition(position);
         let right = this.rightOfPosition(position);
         
-        let targetPositioin = -1; 
-        if (this.isPositionEmpty(imageIndexForPosition, top)) {
-            targetPositioin = top;
-        } else if (this.isPositionEmpty(imageIndexForPosition, left)) {
-            targetPositioin = left;
-        } else if (this.isPositionEmpty(imageIndexForPosition, bottom)) {
-            targetPositioin = bottom;
-        } else if (this.isPositionEmpty(imageIndexForPosition, right)) {
-            targetPositioin = right;
+        let target = -1; 
+        if (this.isPositionEmpty(imageIndex, top)) {
+            target = top;
+        } else if (this.isPositionEmpty(imageIndex, left)) {
+            target = left;
+        } else if (this.isPositionEmpty(imageIndex, bottom)) {
+            target = bottom;
+        } else if (this.isPositionEmpty(imageIndex, right)) {
+            target = right;
         }
     
-        if (targetPositioin >= 0) {
-            imageIndexForPosition[targetPositioin] = imageIndexForPosition[position];
-            imageIndexForPosition[position] = this.lastIndex();
-            canvas.emptyPosition = position; 
-            return targetPositioin;
+        if (target >= 0) {
+            imageIndex[target] = imageIndex[position];
+            imageIndex[position] = this.lastIndex();
+            puzzle.emptyPosition = position; 
+            return target;
         }
         return -1;
     }
 
     //clear image on the old position, and draw new image on new position
-    refreshImagePositions(context, imageIndexForPosition, origin, target) {
+    refreshImagePositions(context, imageIndex, origin, target) {
         let originRect = this.rectForPosition(origin);
     
         context.clearRect(originRect[0], originRect[1], originRect[2], originRect[3]);
 
-        this.drawPiece(this.meme, imageIndexForPosition[target], target);
+        this.drawPiece(this.meme, imageIndex[target], target);
     }
 
     checkIfFinished(imageIndex) {
