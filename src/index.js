@@ -67,6 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     const start = document.getElementById('start');
+    
     start.addEventListener('click', e=>{
         e.preventDefault();
         if(meme.length !== 0){
