@@ -4,20 +4,33 @@
 body{
   width: 99%;
   height: 100%;
+  .head-image{
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    flex-direction: row;
+  }
   #HappyNewYear{
     width: 100%;
-    height: 200px;
+    height: 100%;
   }
   
 }
 .under{
   padding-bottom: 10px;
   width: 100%;
+  height: 100%;
   img{
     width: 20%;
+    height: 70vh;
   }
   display: flex;
   flex-direction: row;
+  justify-content: flex-start;
+}
+
+.under>div{
+  height: 70vh;
 }
 
 .game{
@@ -29,6 +42,7 @@ body{
   width: 60%;
   height: 100%;
   margin: auto;
+  min-width: 750px;
 }
 .game-title{
   width: 100%;
@@ -79,6 +93,10 @@ body{
     border-color: silver;
     outline:none;
   }
+  button:hover, select:hover{
+    cursor: pointer;
+    background-color: #f71000; 
+  }
   select{
     background-color: #f44336; 
     border-radius: 20px; 
@@ -94,12 +112,19 @@ body{
     #puzzle-option:focus{
       background-color: red !important;
     }
+    #puzzle-option:hover{
+      cursor: pointer;
+    }
   }
   a{
     text-decoration: none;
     font-family: 'Noto Sans JP', sans-serif;
     font-size: 16px;
     color: rgba(255, 255, 0, 0.842);
+  }
+  a:hover{
+    color: rgba(218, 218, 6, 0.842);
+    font-size: 24px;
   }
 }
 
@@ -186,6 +211,7 @@ body{
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  min-width: 700px;
   .intro-box{
     display: flex;
     flex-direction: column;
@@ -254,27 +280,35 @@ body{
   width: 50px;
   height: 50px;
   position: absolute;
-  top: 220px;
+  top: 350px;
+}
+
+#pause:hover{
+  cursor: pointer;
 }
 
 #question{
   width: 50px;
   height: 50px;
   position: absolute;
-  top: 220px;
+  top: 350px;
   right:10px;
+}
+#question:hover{
+  cursor: pointer;
 }
 
 #original-meme{
   display: none;
-  position: absolute;
-  width: 190px;
-  height: 190px;
-  top: 12px;
-  left: 600px;
+  width: 300px;
+  height: 300px;
   border: 1px solid gainsboro;
 }
 
 #original-meme.show{
   display: block;
+  position: absolute;
+  top:17px;
+  left: 40%;
 }
+
