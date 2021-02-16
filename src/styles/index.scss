@@ -9,6 +9,8 @@ body{
     height: 30vh;
     display: flex;
     flex-direction: row;
+    background-image: url('/dist/images/HappyNewYear.png');
+    background-size: 626px;
   }
   #HappyNewYear{
     width: 100%;
@@ -308,7 +310,7 @@ body{
 #original-meme.show{
   display: block;
   position: absolute;
-  top:17px;
+  top:8px;
   left: 43%;
 }
 
