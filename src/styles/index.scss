@@ -95,6 +95,8 @@ body{
     color: ivory;
     border-color: silver;
     outline:none;
+    padding-left: 10px;
+    padding-right: 10px;
   }
   button:hover, select:hover{
     cursor: pointer;
@@ -109,6 +111,8 @@ body{
     color: ivory;
     border-color: silver;
     outline:none;
+    padding-left: 10px;
+    padding-right: 10px;
     #puzzle-option{
       background-color: rgba(246, 250, 42, 0.199);
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -128,6 +132,8 @@ body{
     color: ivory;
   }
   a:hover{
+    transition-property: font-size;
+    transition-duration: 0.5s;
     color: lightgoldenrodyellow;
     font-size: 24px;
   }
