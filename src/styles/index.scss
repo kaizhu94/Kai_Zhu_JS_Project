@@ -49,7 +49,7 @@ body{
   width: 100%;
   height: 100%;
   #upper{
-    background-image: url('https://raw.githubusercontent.com/kaizhu94/Kai_Zhu_JS_Project/gh_pages/dist/images/cownewyear.jpg');
+    background-image: url('https://raw.githubusercontent.com/kaizhu94/Kai_Zhu_JS_Project/gh_pages/dist/images/header2.jpg');
     background-size: 100%;
   }
 }
@@ -58,7 +58,7 @@ body{
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 80%;
+  width: 90%;
   height: auto;
   margin: auto;
   padding-left: 30px;
@@ -73,7 +73,7 @@ body{
     margin-top: 10px;
   }
   p{
-    color:cyan;
+    color: black;
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 20px;
     margin-bottom: 0;
@@ -97,6 +97,7 @@ body{
     outline:none;
     padding-left: 10px;
     padding-right: 10px;
+    font-weight: 500;
   }
   button:hover, select:hover{
     cursor: pointer;
@@ -113,6 +114,7 @@ body{
     outline:none;
     padding-left: 10px;
     padding-right: 10px;
+    font-weight: 500;
     #puzzle-option{
       background-color: rgba(246, 250, 42, 0.199);
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -130,6 +132,15 @@ body{
     font-family: 'Noto Sans JP', sans-serif;
     font-size: 16px;
     color: ivory;
+    display: block;
+    border: 1px solid silver;
+    border-radius: 20px; 
+    border-color: silver;
+    outline:none;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #f44336;
+    font-weight: 500;
   }
   a:hover{
     transition-property: font-size;
@@ -141,7 +152,7 @@ body{
 
 #game-board{
   width: 100%;
-  height: 77%;
+  height: 79%;
   margin: auto;
   background-image: url('https://raw.githubusercontent.com/kaizhu94/Kai_Zhu_JS_Project/gh_pages/dist/images/cownewyear.jpg');
   background-size: 100%;
