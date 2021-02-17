@@ -70,11 +70,13 @@ body{
   #Title{
     width: 400px;
     height: 50px;
+    margin-top: 10px;
   }
   p{
-    color: rgba(255, 255, 0, 0.842);
+    color:cyan;
     font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 14px;
+    font-size: 20px;
+    margin-bottom: 0;
   }
 }
 
@@ -90,20 +92,21 @@ body{
     border-radius: 20px; 
     font-family: 'Noto Sans JP', sans-serif;
     font-size: 16px;
-    color: rgba(255, 255, 0, 0.842);
+    color: ivory;
     border-color: silver;
     outline:none;
   }
   button:hover, select:hover{
     cursor: pointer;
     background-color: #f71000; 
+    color: black;
   }
   select{
     background-color: #f44336; 
     border-radius: 20px; 
     font-family: 'Noto Sans JP', sans-serif;
     font-size: 16px;
-    color: rgba(255, 255, 0, 0.842);
+    color: ivory;
     border-color: silver;
     outline:none;
     #puzzle-option{
@@ -115,13 +118,14 @@ body{
     }
     #puzzle-option:hover{
       cursor: pointer;
+      color: rgba(218, 218, 6, 0.842);
     }
   }
   a{
     text-decoration: none;
     font-family: 'Noto Sans JP', sans-serif;
     font-size: 16px;
-    color: rgba(255, 255, 0, 0.842);
+    color: ivory;
   }
   a:hover{
     color: rgba(218, 218, 6, 0.842);
@@ -131,7 +135,7 @@ body{
 
 #game-board{
   width: 100%;
-  height: 80%;
+  height: 77%;
   margin: auto;
   background-image: url('https://raw.githubusercontent.com/kaizhu94/Kai_Zhu_JS_Project/gh_pages/dist/images/cownewyear.jpg');
   background-size: 100%;
@@ -163,13 +167,8 @@ body{
     height: 300px;
     width: 300px;
   }
-  #player1Board{
-    background-image: url('https://raw.githubusercontent.com/kaizhu94/Kai_Zhu_JS_Project/gh_pages/dist/images/wasd_key.png'), url('https://raw.githubusercontent.com/kaizhu94/Kai_Zhu_JS_Project/gh_pages/dist/images/mouse_click.png') ;
-    background-size: 42%;
-  }
-  #player2Board{
-    background-image: url('https://raw.githubusercontent.com/kaizhu94/Kai_Zhu_JS_Project/gh_pages/dist/images/arrow_key2.png'), url('https://raw.githubusercontent.com/kaizhu94/Kai_Zhu_JS_Project/gh_pages/dist/images/mouse_click.png') ;
-    background-size: 42%;
+  #player1Board, #player2Board{
+    background-color: blanchedalmond;
   }
 }
 
@@ -177,7 +176,7 @@ body{
   display: none;
   
   p{
-    color:#cef436;
+    color: greenyellow;
     font-size: 24px;
     font-family: 'Fugaz One', cursive;
     margin: 0px;
@@ -188,7 +187,7 @@ body{
 #winner_message_2{
   display: none;
   p{
-    color:#cef436;
+    color: greenyellow;
     font-size: 24px;
     font-family: 'Fugaz One', cursive;
     margin: 0px;
@@ -204,7 +203,7 @@ body{
   display: block;
   border: 1px solid gainsboro;
   width: 50%;
-  height: 45%;
+  height: 38%;
   background-image: url('https://raw.githubusercontent.com/kaizhu94/Kai_Zhu_JS_Project/gh_pages/dist/images/modal_background.jpg');
   background-size: 100%;
   z-index: 10;
@@ -213,6 +212,11 @@ body{
   top: 50%;
   transform: translate(-50%, -50%);
   min-width: 700px;
+  margin-top: 6px;
+  h3{
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
   .intro-box{
     display: flex;
     flex-direction: column;
@@ -230,7 +234,7 @@ body{
       left: 420px;
     }
     *{
-      margin: 15px;
+      margin: 10px;
       font-family: 'Aladin', cursive;
       color: rgb(19, 2, 2);
     }
@@ -292,8 +296,8 @@ body{
   width: 50px;
   height: 50px;
   position: absolute;
-  top: 350px;
-  right:10px;
+  top: 340px;
+  right:0px;
 }
 #question:hover{
   cursor: pointer;
@@ -309,7 +313,7 @@ body{
 #original-meme.show{
   display: block;
   position: absolute;
-  top:8px;
+  top:15px;
   left: 43%;
 }
 
