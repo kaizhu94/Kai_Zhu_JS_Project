@@ -87,6 +87,7 @@ body{
   margin: auto;
   margin-top: 30px;
   padding-bottom: 10px;
+  height: 40px;
   button{
     background-color: #f44336; 
     border-radius: 20px; 
@@ -139,10 +140,12 @@ body{
     outline:none;
     padding-left: 10px;
     padding-right: 10px;
+    padding-top: 7px;
     background-color: #f44336;
     font-weight: 500;
   }
   a:hover{
+    padding-top: 0px;
     transition-property: font-size;
     transition-duration: 0.5s;
     color: lightgoldenrodyellow;
@@ -152,10 +155,10 @@ body{
 
 #game-board{
   width: 100%;
-  height: 79%;
+  height: 77%;
   margin: auto;
   background-image: url('https://raw.githubusercontent.com/kaizhu94/Kai_Zhu_JS_Project/gh_pages/dist/images/cownewyear.jpg');
-  background-size: 100%;
+  background-size: cover;
   #players{
     display: flex;
     flex-direction: row;
