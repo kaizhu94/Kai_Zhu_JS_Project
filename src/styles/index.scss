@@ -100,8 +100,8 @@ body{
     color: ivory;
     border-color: silver;
     outline:none;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 14px;
+    padding-right: 14px;
     font-weight: 500;
   }
   button:hover, select:hover{
@@ -117,8 +117,8 @@ body{
     color: ivory;
     border-color: silver;
     outline:none;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 14px;
+    padding-right: 14px;
     font-weight: 500;
     #puzzle-option{
       background-color: rgba(246, 250, 42, 0.199);
@@ -142,8 +142,8 @@ body{
     border-radius: 20px; 
     border-color: silver;
     outline:none;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 14px;
+    padding-right: 14px;
     padding-top: 7px;
     background-color: #f44336;
     font-weight: 500;
@@ -333,10 +333,15 @@ body{
   width: 220px;
   height: 220px;
   border: 1px solid gainsboro;
+  opacity: 0;
 }
 
 #original-meme.show{
   display: block;
   margin-top:40px;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
 }
 
